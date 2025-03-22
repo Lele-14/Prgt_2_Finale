@@ -16,6 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: List directory contents
+        run: ls -R # Questo elencherà tutti i file e le cartelle per aiutarti a vedere se pom.xml esiste
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
