@@ -22,13 +22,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Compile Java files
+      - name: Compile a specific Java file
         run: |
-          echo Compilazione dei file Java...
-          dir src\*.java /s /b > files.txt
-          javac -d out @files.txt
+          echo Compilazione di un file Java...
+          javac src\NomeFile.java -d out
 
       - name: Run Java program
         run: |
           echo Esecuzione del programma...
-          java -cp out MainClassName # Sostituisci "MainClassName" con il nome della tua classe principale
+          java -cp out NomeFile # Sostituisci con il nome della tua classe principale
