@@ -25,7 +25,8 @@ jobs:
       - name: Compile Java files
         run: |
           echo Compilazione dei file Java...
-          javac -d out src\**\*.java
+          dir /s /b src\*.java > files.txt
+          javac -d out @files.txt
 
       - name: Run Java program
         run: |
