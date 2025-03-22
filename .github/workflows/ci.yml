@@ -17,7 +17,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List directory contents
-        run: ls -R # Per elencare tutti i file e le cartelle
+        run: |
+          echo "Visualizzo la struttura delle cartelle:"
+          ls -R # Elenco ricorsivo di tutti i file e cartelle
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -26,8 +28,7 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Change directory to Progetto_TPSIT_finale
-        run: cd Progetto_TPSIT_finale
-
       - name: Build with Maven
-        run: mvn -B package
+        run: |
+          cd Progetto_TPSIT_finale
+          mvn -B package
