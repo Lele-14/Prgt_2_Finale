@@ -33,4 +33,3 @@ jobs:
         run: |
           echo Esecuzione del programma...
           java -cp out NomeClassePrincipale # Sostituisci "NomeClassePrincipale" con il nome della tua classe principale
-Modifica:
