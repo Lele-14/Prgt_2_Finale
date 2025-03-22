@@ -25,7 +25,7 @@ jobs:
       - name: List all Java files and compile
         run: |
           echo Compilazione dei file Java...
-          dir src\*.java /s /b > files.txt
+          dir Progetto_TPSIT_finale\src\*.java /s /b > files.txt
           javac -d out @files.txt
 
       - name: Run Java program
