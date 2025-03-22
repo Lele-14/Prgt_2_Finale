@@ -25,8 +25,10 @@ jobs:
       - name: Compile Java files
         run: |
           echo Compilazione dei file Java...
-          dir /s /b src\*.java > files.txt
-          javac -d out @files.txt
+          setlocal enabledelayedexpansion
+          set SOURCES=
+          for /r %%i in (src\*.java) do set SOURCES=!SOURCES! %%i
+          javac -d out !SOURCES!
 
       - name: Run Java program
         run: |
