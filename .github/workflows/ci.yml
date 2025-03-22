@@ -10,25 +10,24 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: List directory contents
-        run: |
-          echo "Visualizzo la struttura delle cartelle:"
-          ls -R # Elenco ricorsivo di tutti i file e cartelle
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: maven
 
-      - name: Build with Maven
+      - name: Compile Java files
         run: |
-          cd Progetto_TPSIT_finale
-          mvn -B package
+          echo Compilazione dei file Java...
+          javac -d out src\**\*.java
+
+      - name: Run Java program
+        run: |
+          echo Esecuzione del programma...
+          java -cp out MainClassName # Sostituisci "MainClassName" con il nome della tua classe principale
